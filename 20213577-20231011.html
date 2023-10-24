@@ -16,7 +16,7 @@
  <body>
  <!--第一步先让一个视频出现在网页中-->
   <video id = 'video' >  
-      <source src="F:/Git/huangwensheng/videoMP4/2013东西方2马的交锋.mp4" type="video/mp4">
+      <source src="videoMP4/2013东西方2马的交锋.mp4" type="video/mp4">
   </video>
 <!-- 第二步为视频设置播放PLAYY暂停STOP下一个NEXT三个按钮-->
  <div id="" class="">
@@ -40,7 +40,7 @@
 	var i=0;
 	plays.onclick = function(){
 	i=videosns.value;
-	videos.src="F:/Git/huangwensheng/videoMP4/"+video[i] ;
+	videos.src="videoMP4/"+video[i] ;
 	videos.play();
 	};
 	stops.onclick = function(){
@@ -52,7 +52,7 @@
 		if(i ==video.length){
 		i=0;}
 		console.log(i);
-    videos.src="F:/Git/huangwensheng/videoMP4/"+video[i] ;
+    videos.src="videoMP4/"+video[i] ;
 	videos.play();
 	 };
 //对视频进行前一个播放，当视频到达第一个再前进时提示视频播放失败
@@ -60,7 +60,7 @@
 		  i--;
 		if(i>=0){
 			console.log(i);
-		videos.src="F:/Git/huangwensheng/videoMP4/"+video[i] ;
+		videos.src="videoMP4/"+video[i] ;
 		videos.play();
 		 }
 		  else{
