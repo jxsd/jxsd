@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213577-20231011</title>
+   <script type="text/javascript">
+   <!--
+	var video = ['2013东西方2马的交锋.mp4','funDogs.mp4','上瘾.mp4','世界冠军江西弃婴.mp4','农民吹牛.mp4','逗八哥狗.mp4'];
+   //-->
+   </script>
+   <!-- 第三步调整视频大小和按钮-->
+   <style type="text/css">
+	 
+   </style>
+ </head>
+ <body>
+ <!--第一步先让一个视频出现在网页中-->
+  <video id = 'video' >  
+      <source src="F:/Git/huangwensheng/videoMP4/2013东西方2马的交锋.mp4" type="video/mp4">
+  </video>
+<!-- 第二步为视频设置播放PLAYY暂停STOP下一个NEXT三个按钮-->
+ <div id="" class="">
+	<input type="button" value="PALY" id="play">
+	<input type="button" value="STOP" id="stop">
+	<input type="button" value="NEXT" id="next">
+	<input type="button" value="PRE"  id="pre">
+	<input type="text"   value="0"    id="videosn">
+ </div>
+ </body>
+ <!--难点，为三个按钮利用JavaScript赋值函数方法使按钮可以实现网页操作-->
+ <script type="text/javascript">
+ <!--
+    var videos = document.getElementById('video');
+	var plays  = document.getElementById('play');
+	var stops  = document.getElementById('stop');
+	var nexts  = document.getElementById('next');
+	var pres   = document.getElementById('pre');
+	//定位视频的位置序号
+	var videosns = document.getElementById('videosn');
+	var i=0;
+	plays.onclick = function(){
+	i=videosns.value;
+	videos.src="F:/Git/huangwensheng/videoMP4/"+video[i] ;
+	videos.play();
+	};
+	stops.onclick = function(){
+	videos.pause();
+	};
+//下一个视频，当i=数组长度时视频回到第一个
+	nexts.onclick = function(){
+		i++;
+		if(i ==video.length){
+		i=0;}
+		console.log(i);
+    videos.src="F:/Git/huangwensheng/videoMP4/"+video[i] ;
+	videos.play();
+	 };
+//对视频进行前一个播放，当视频到达第一个再前进时提示视频播放失败
+    pres.onclick = function(){
+		  i--;
+		if(i>=0){
+			console.log(i);
+		videos.src="F:/Git/huangwensheng/videoMP4/"+video[i] ;
+		videos.play();
+		 }
+		  else{
+		  alert("视频播放失败");
+		  }
+		}
+ //-->
+ </script>
+</html>
